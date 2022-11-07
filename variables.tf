@@ -15,7 +15,7 @@ variable "subnet_name" {
 }
 
 variable "virtual_machine_name" {
-  default = "gitops-vm2022"
+  default = "prodution-vm"
 }
 
 variable "virtual_machine_size" {
@@ -23,5 +23,5 @@ variable "virtual_machine_size" {
 }
 
 variable "network_interface_name" {
-  default = "gitops-nic"
+  default = "production-nic"
 }
