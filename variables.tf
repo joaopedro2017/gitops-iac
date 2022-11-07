@@ -13,3 +13,15 @@ variable "virtual_network_name" {
 variable "subnet_name" {
   default = "aks-subnet-backend"
 }
+
+variable "virtual_machine_name" {
+  default = "gitops-vm2022"
+}
+
+variable "virtual_machine_size" {
+  default = "Standard_D2as_v4"
+}
+
+variable "network_interface_name" {
+  default = "gitops-nic"
+}
