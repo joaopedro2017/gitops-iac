@@ -9,3 +9,7 @@ variable "location" {
 variable "virtual_network_name" {
   default = "VNET-gitops"
 }
+
+variable "subnet_name" {
+  default = "aks-subnet-backend"
+}
