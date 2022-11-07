@@ -7,7 +7,7 @@ terraform {
   }
 
   backend "azurerm" {
-    resource_group_name  = "eastus2-gitops-bkp-rg"
+    resource_group_name  = "eastus2-gitops-rg"
     storage_account_name = "gitopsiac"
     container_name       = "terraformbkp"
     key                  = "prod.terraform.tfstate"
