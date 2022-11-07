@@ -15,7 +15,7 @@ variable "subnet_name" {
 }
 
 variable "virtual_machine_name" {
-  default = "eastus2-prodution-vm"
+  default = "prodution-vm"
 }
 
 variable "virtual_machine_size" {
@@ -23,5 +23,5 @@ variable "virtual_machine_size" {
 }
 
 variable "network_interface_name" {
-  default = "eastus2-production-nic"
+  default = "production-nic"
 }
