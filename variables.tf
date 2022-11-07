@@ -5,3 +5,7 @@ variable "resource_group_name" {
 variable "location" {
   default = "eastus2"
 }
+
+variable "virtual_network_name" {
+  default = "VNET-gitops"
+}
