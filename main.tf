@@ -19,6 +19,6 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "gitops_rg" {
-  name     = var.resource_group_name
-  location = var.location
+  name     = "eastus2-gitops-terraform-rg"
+  location = "eastus2"
 }
