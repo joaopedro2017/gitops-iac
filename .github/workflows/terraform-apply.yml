@@ -16,7 +16,7 @@ permissions:
   contents: read
 
 jobs:
-  iac:
+  iac-apply:
     runs-on: ubuntu-latest
     env:
         ARM_CLIENT_ID: ${{ secrets.AZURE_AD_CLIENT_ID }}
