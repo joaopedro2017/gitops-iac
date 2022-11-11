@@ -1,6 +1,6 @@
 resource "azurerm_windows_virtual_machine" "virtual_machine" {
-  name                = var.virtual_machine_name
-  computer_name       = var.virtual_machine_name
+  name                = "prodution-vm"
+  computer_name       = "prodution-vm"
   resource_group_name = azurerm_resource_group.gitops_rg.name
   location            = azurerm_resource_group.gitops_rg.location
   size                = "Standard_D2as_v4"
