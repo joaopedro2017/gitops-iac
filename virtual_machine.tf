@@ -24,8 +24,8 @@ resource "azurerm_windows_virtual_machine" "virtual_machine" {
   resource_group_name = azurerm_resource_group.gitops_rg.name
   location            = azurerm_resource_group.gitops_rg.location
   size                = "Standard_D2as_v4"
-  admin_username      = "adminuser"
-  admin_password      = var.ADM_USER_PASS
+  admin_username      = var.ADM_USER_VM_NAME
+  admin_password      = var.ADM_USER_VM_PASS
 
   network_interface_ids = [
     azurerm_network_interface.nic.id
