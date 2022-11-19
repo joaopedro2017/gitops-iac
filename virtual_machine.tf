@@ -1,3 +1,10 @@
+resource "azurerm_public_ip" "public_ip" {
+  name                = "production_vm_public_ip"
+  location            = azurerm_resource_group.gitops_rg.location
+  resource_group_name = azurerm_resource_group.gitops_rg.name
+  allocation_method   = "Static"
+}
+
 resource "azurerm_network_interface" "nic" {
   name                = "gitops-nic"
   location            = azurerm_resource_group.gitops_rg.location
@@ -7,6 +14,7 @@ resource "azurerm_network_interface" "nic" {
     name                          = "internal"
     subnet_id                     = azurerm_subnet.subnet.id
     private_ip_address_allocation = "Dynamic"
+    public_ip_address_id          = azurerm_public_ip.public_ip.id
   }
 }
 
@@ -17,7 +25,7 @@ resource "azurerm_windows_virtual_machine" "virtual_machine" {
   location            = azurerm_resource_group.gitops_rg.location
   size                = "Standard_D2as_v4"
   admin_username      = "adminuser"
-  admin_password      = "P@$$w0rd1234!"
+  admin_password      = var.ADM_USER_PASS
 
   network_interface_ids = [
     azurerm_network_interface.nic.id
