@@ -1,5 +1,5 @@
 variable "ADM_USER_VM_NAME" {
-  type = string
+  type    = string
   default = "admuser"
 }
 
