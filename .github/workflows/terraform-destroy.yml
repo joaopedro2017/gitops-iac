@@ -16,6 +16,7 @@ jobs:
       ARM_CLIENT_SECRET: ${{ secrets.AZURE_AD_CLIENT_SECRET }}
       ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
       ARM_TENANT_ID: ${{ secrets.AZURE_AD_TENANT_ID }}  
+      ADM_USER_VM_PASS : ${{ secrets.ADM_USER_VM_PASS }}
     environment: ${{ github.event.inputs.environment }}
     
     defaults:
@@ -36,4 +37,4 @@ jobs:
       run: terraform init
     
     - name: Terraform Destroy
-      run: terraform destroy -auto-approve -input=false
+      run: terraform destroy -auto-approve -var "ADM_USER_VM_PASS=${{ secrets.ADM_USER_VM_PASS }}" -input=false
